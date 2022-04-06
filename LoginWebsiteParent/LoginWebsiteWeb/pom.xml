@@ -21,6 +21,13 @@
 	</properties>
 
 	<dependencies>
+
+		<dependency>
+			<groupId>LoginWebsite</groupId>
+			<artifactId>LoginWebsiteLogic</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
