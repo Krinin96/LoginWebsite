@@ -25,5 +25,22 @@ public class User {
 	public String toString() {
 		return this.name + ", " + this.password;
 	}
+	
+	@Override
+	public boolean equals(Object t) {
+		if(t == this) {
+			return true;
+		}
+		
+		if(!(t instanceof User)) {
+			return false;
+		}
+		
+		if(t instanceof User) {
+			User newUser = new User(t.get)
+		}
+		
+		return true;
+	}
 
 }
