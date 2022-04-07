@@ -26,8 +26,8 @@
 			<groupId>LoginWebsite</groupId>
 			<artifactId>LoginWebsiteLogic</artifactId>
 			<version>${project.version}</version>
-		</dependency>
-
+		</dependency>		
+		
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -41,6 +41,7 @@
 			<version>1.9.5</version>
 			<scope>test</scope>
 		</dependency>
+		
 
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -48,6 +49,9 @@
 			<version>3.1.0</version>
 			<scope>provided</scope>
 		</dependency>
+		
+		
+		
 	</dependencies>
 
 
