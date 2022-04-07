@@ -38,7 +38,7 @@ public class User {
 
 		if (t instanceof User) {
 			if (this.toString().equals(t.toString()))
-				;
+				
 			{
 				return true;
 			}
