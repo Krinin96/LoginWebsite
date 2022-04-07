@@ -16,7 +16,9 @@ public class AllUsers {
 	
 	public void removeUser(User user) {
 		for(int i=0; i < users.size(); i++) {
-			if(Users)
+			if(user.equals(users.get(i))) {
+				users.remove(i);
+			}
 		}
 	}
 }
