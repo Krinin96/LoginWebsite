@@ -12,35 +12,40 @@ public class User {
 		this.password = password;
 
 	}
-	
+
 	public String getName() {
 		return this.name;
 	}
-	
+
 	public String getPassword() {
 		return this.password;
 	}
-	
+
 	@Override
 	public String toString() {
 		return this.name + ", " + this.password;
 	}
-	
+
 	@Override
 	public boolean equals(Object t) {
-		if(t == this) {
+		if (t == this) {
 			return true;
 		}
-		
-		if(!(t instanceof User)) {
+
+		if (!(t instanceof User)) {
 			return false;
 		}
-		
-		if(t instanceof User) {
-			User newUser = new User(t.get)
+
+		if (t instanceof User) {
+			if (this.toString().equals(t.toString()))
+				;
+			{
+				return true;
+			}
+
 		}
-		
-		return true;
+
+		return false;
 	}
 
 }
