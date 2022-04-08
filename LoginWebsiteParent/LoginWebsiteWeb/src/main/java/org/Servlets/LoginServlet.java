@@ -1,6 +1,7 @@
 package org.Servlets;
 
 import org.LoginWebsiteLogic.User;
+import org.LoginWebsiteLogic.AllUsers;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
