@@ -1,7 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
 
-<!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
 
 <web-app>
 	<servlet>
@@ -15,13 +14,14 @@
 	</servlet-mapping>
 	
 	
-<!-- 	<servlet> -->
-<!-- 		<servlet-name>CreatNew</servlet-name> -->
-<!-- 		<servlet-class></servlet-class> -->
-<!-- 	</servlet> -->
+	<servlet>
+		<servlet-name>CreateNew</servlet-name>
+		<servlet-class>/CreateUser</servlet-class>
+	</servlet>
 	
-<!-- 	<servlet-mapping> -->
-<!-- 		<servlet-name>CreatNew</servlet-name> -->
-<!-- 		<url-pattern>/CreatNew</url-pattern> -->
-<!-- 	</servlet-mapping> -->
+	<servlet-mapping>
+		<servlet-name>CreateNew</servlet-name>
+		<url-pattern>/CreatNew</url-pattern>
+	</servlet-mapping>
+	
 </web-app>
