@@ -21,4 +21,14 @@ public class AllUsers {
 			}
 		}
 	}
+	
+	public boolean doesUserExist(User user) {
+		for(User currentUser : users) {
+			if(currentUser.equals(user)) {
+				return true;
+			}
+		}
+		
+		return false;
+	}
 }
