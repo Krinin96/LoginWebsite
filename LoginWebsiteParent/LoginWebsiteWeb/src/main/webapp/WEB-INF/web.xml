@@ -16,7 +16,7 @@
 	
 	<servlet>
 		<servlet-name>CreateNew</servlet-name>
-		<servlet-class>/CreateUser</servlet-class>
+		<servlet-class>org.Servlets.CreateUserServlet</servlet-class>
 	</servlet>
 	
 	<servlet-mapping>
