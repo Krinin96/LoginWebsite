@@ -22,11 +22,6 @@
 
 	<dependencies>
 
-		<dependency>
-			<groupId>LoginWebsite</groupId>
-			<artifactId>LoginWebsiteLogic</artifactId>
-			<version>${project.version}</version>
-		</dependency>
 
 		<dependency>
 			<groupId>junit</groupId>
@@ -54,6 +49,13 @@
 			<groupId>org.thymeleaf</groupId>
 			<artifactId>thymeleaf</artifactId>
 			<version>3.0.15.RELEASE</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>LoginWebsite</groupId>
+			<artifactId>LoginWebsiteLogic</artifactId>
+			<version>${project.version}</version>
 		</dependency>
 
 
