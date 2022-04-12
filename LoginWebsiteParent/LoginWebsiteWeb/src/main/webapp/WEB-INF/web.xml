@@ -21,7 +21,9 @@
 	
 	<servlet-mapping>
 		<servlet-name>CreateNew</servlet-name>
-		<url-pattern>/CreatNew</url-pattern>
+		<url-pattern>/CreateNew</url-pattern>
 	</servlet-mapping>
+	
+	
 	
 </web-app>
