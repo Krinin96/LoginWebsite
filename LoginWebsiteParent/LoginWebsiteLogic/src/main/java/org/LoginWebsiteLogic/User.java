@@ -1,20 +1,26 @@
 package org.LoginWebsiteLogic;
 
-import java.util.HashMap;
 
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class User {
 
-	private String name;
+	@Id
+	private String username;
 	private String password;
+	
 
 	public User(String name, String password) {
-		this.name = name;
+		this.username = name;
 		this.password = password;
 
 	}
 
-	public String getName() {
-		return this.name;
+	public String getUserName() {
+		return this.username;
 	}
 
 	public String getPassword() {
@@ -23,7 +29,7 @@ public class User {
 
 	@Override
 	public String toString() {
-		return this.name + ", " + this.password;
+		return this.username + ", " + this.password;
 	}
 
 	@Override

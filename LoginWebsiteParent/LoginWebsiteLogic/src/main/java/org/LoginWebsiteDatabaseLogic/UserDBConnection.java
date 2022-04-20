@@ -1,14 +1,30 @@
 package org.LoginWebsiteDatabaseLogic;
 
+import org.LoginWebsiteLogic.User;
+
 import java.sql.Connection;
+
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.sql.SQLException;
 
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
 public class UserDBConnection {
 
+	
+	
+	public static void main(String[]args) {
+		
+		User newUser = new User("Steve","Steve123");
+		addUserHibernate(newUser);
+	}
+	
+	
 	private Connection getConnection() {
 
 		try {
@@ -43,6 +59,18 @@ public class UserDBConnection {
 
 		statement.close();
 		connection.close();
+	}
+	
+	public static void addUserHibernate(User user) {
+		
+		
+		Configuration con = new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(User.class);
+		SessionFactory sf = con.buildSessionFactory();
+		
+		Session session = sf.openSession();
+		Transaction tx = session.beginTransaction();
+		session.save(user);
+		tx.commit();
 	}
 
 	public boolean checkIfPersonExist(String username) throws SQLException {
