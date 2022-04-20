@@ -2,15 +2,24 @@ package org.LoginWebsiteLogic;
 
 
 
+import java.io.Serializable;
+
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
-public class User {
+@Table(name ="Users")
+public class User implements Serializable {
 
-	@Id
-	private String username;
+	@Id	
+	private String username;	
 	private String password;
+	//not used in front yet	
+	
+	
+	//@Transient a way to not store into database but use elsewhere
 	
 
 	public User(String name, String password) {
@@ -18,13 +27,24 @@ public class User {
 		this.password = password;
 
 	}
+	
+	public User() {
+		
+	}
 
 	public String getUserName() {
 		return this.username;
 	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
 
 	public String getPassword() {
 		return this.password;
+	}
+	
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	@Override
@@ -41,11 +61,14 @@ public class User {
 		if (!(t instanceof User)) {
 			return false;
 		}
+		
+		
 
 		if (t instanceof User) {
-			if (this.toString().equals(t.toString()))
-				
-			{
+			User newUser = (User)t;
+			
+			if(this.username.equals(newUser.getUserName()) &&
+					this.password.equals(newUser.getPassword())) {
 				return true;
 			}
 
