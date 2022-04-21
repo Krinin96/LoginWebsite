@@ -1,6 +1,7 @@
 package org.Servlets;
 
 import org.LoginWebsiteDatabaseLogic.UserDBConnection;
+import org.LoginWebsiteLogic.User;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -15,41 +16,24 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/CreateNew")
 public class CreateUserServlet extends HttpServlet {
 
-	public void doPost(HttpServletRequest req, HttpServletResponse res) {
+	public void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException {
 		String username = req.getParameter("username");
 		String password = req.getParameter("password");
 
 		UserDBConnection dbConnection = new UserDBConnection();
+		
+		User newUser = new User(username,password);
 
-		try {
-			if (!dbConnection.checkIfPersonExist(username)) {
-				dbConnection.addUser(username, password);
-
-				try {
-					res.sendRedirect("index.html");
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					System.out.println("cant redirect");
-					e.printStackTrace();
-				}
-			} else {
-				// username taken
-				PrintWriter out;
-				try {
-					out = res.getWriter();
-					out.println("username is already taken");
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					System.out.println("cant print anything");
-					e.printStackTrace();
-				}
-
-			}
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			System.out.println("failed here");
-			e.printStackTrace();
-
+		
+		if(!dbConnection.checkIfUserExist(newUser)) {
+			dbConnection.addUser(newUser);
+			res.sendRedirect("index.html");
+		}else {
+			PrintWriter out = res.getWriter();			
+			out.println("username taken");		
+			
 		}
+		
+		
 	}
 }

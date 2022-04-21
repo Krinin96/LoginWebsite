@@ -32,18 +32,11 @@ public class LoginServlet extends HttpServlet {
 			System.out.print("failed to get writer");
 			e1.printStackTrace();
 		}
-		
-		try {
-			if(dbConnection.checkIfLoginIsCorrect(username, password)) {
-				out.println("Welcome " + username);
-			}else {
-				out.println("User name or password incorrect");
-			}
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			System.out.println("failed to connect");
-			e.printStackTrace();
-		}
-		
+		User newUser = new User(username,password);
+		if(dbConnection.checkIfLoginIsCorrect(newUser)) {
+			out.println("Welcome " + username);
+		}else {
+			out.println("User name or password incorrect");
+		}			
 	}
 }
